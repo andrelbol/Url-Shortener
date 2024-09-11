@@ -8,6 +8,9 @@ defmodule UrlShortener.Services.UrlService do
 
   @spec get_all() :: [String.t()]
   def get_all do
-    []
+    urls = url_repo().list()
+    Enum.map(urls, fn url -> url.url_string end)
   end
+
+  defp url_repo, do: Application.get_env(:url_shortener, :url_repo)
 end

@@ -28,4 +28,5 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Dependency Injection
 config :url_shortener,
-  url_service: UrlServiceMock
+  url_service: UrlServiceMock,
+  url_repo: UrlRepoMock
