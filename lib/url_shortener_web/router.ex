@@ -2,12 +2,12 @@ defmodule UrlShortenerWeb.Router do
   use UrlShortenerWeb, :router
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug(:accepts, ["json"])
   end
 
   scope "/api", UrlShortenerWeb do
-    pipe_through :api
-    get "/urls", UrlController, :index
+    pipe_through(:api)
+    get("/urls", UrlController, :index)
   end
 
   # Enable LiveDashboard in development
@@ -20,9 +20,9 @@ defmodule UrlShortenerWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/dev" do
-      pipe_through [:fetch_session, :protect_from_forgery]
+      pipe_through([:fetch_session, :protect_from_forgery])
 
-      live_dashboard "/dashboard", metrics: UrlShortenerWeb.Telemetry
+      live_dashboard("/dashboard", metrics: UrlShortenerWeb.Telemetry)
     end
   end
 end

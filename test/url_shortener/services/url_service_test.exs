@@ -6,7 +6,7 @@ defmodule UrlShortener.Services.UrlServiceTest do
 
   describe "get_all" do
     test "gets all urls from repository" do
-      mockUrls = [%Url{ url_string: "some-url"}]
+      mockUrls = [%Url{url_string: "some-url"}]
       stub(UrlRepoMock, :list, fn -> mockUrls end)
 
       assert UrlService.get_all() == ["some-url"]
