@@ -25,3 +25,7 @@ config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# Dependency Injection
+config :url_shortener,
+  url_service: UrlServiceMock
