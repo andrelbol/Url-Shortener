@@ -10,5 +10,7 @@ defmodule UrlShortener.Schemas.Url do
   schema "urls" do
     field(:url_string, :string)
     field(:shortened_url, :string)
+
+    timestamps()
   end
 end
